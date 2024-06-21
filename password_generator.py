@@ -17,3 +17,7 @@ if nums:
     all += digits
 if syms:
     all += symbols
+
+length = 20
+amount = 10
+
