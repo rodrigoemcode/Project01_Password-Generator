@@ -28,3 +28,14 @@ def generate_random_password(length, use_upper=True, use_lower=True, use_digits=
 
     if not all_characters:
         raise ValueError("At least one type of character must be selected.")
+
+    # Ensure the password contains at least one of each selected type
+    password = []
+    if use_upper:
+        password.append(random.choice(string.ascii_uppercase))
+    if use_lower:
+        password.append(random.choice(string.ascii_lowercase))
+    if use_digits:
+        password.append(random.choice(string.digits))
+    if use_symbols:
+        password.append(random.choice(string.punctuation))
