@@ -21,3 +21,6 @@ if syms:
 length = 20
 amount = 10
 
+for x in range(amount):
+    password = "".join(random.sample(all, length))
+    print(password)
