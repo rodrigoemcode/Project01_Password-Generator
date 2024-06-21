@@ -39,3 +39,22 @@ def generate_random_password(length, use_upper=True, use_lower=True, use_digits=
         password.append(random.choice(string.digits))
     if use_symbols:
         password.append(random.choice(string.punctuation))
+
+    # Fill the rest of the password with random characters
+    password.extend(random.choice(all_characters) for _ in range(length - len(password)))
+    random.shuffle(password)
+
+    return ''.join(password)
+
+
+def main():
+    length = 20
+    amount = 10
+
+    for _ in range(amount):
+        password = generate_random_password(length)
+        print(password)
+
+
+if __name__ == "__main__":
+    main()
